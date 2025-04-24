@@ -23,18 +23,19 @@ parser.add_argument("--model", type=str, default="roberta-base", help="roberta-b
 parser.add_argument("--r", type=int, default=8)
 parser.add_argument("--alpha", type=float, default=None)
 parser.add_argument("--output_dir", type=str, default="./results")
-parser.add_argument("--epochs", type=int, default=60)
+parser.add_argument("--epochs", type=int, default=3)
 parser.add_argument("--batch_size", type=int, default=16)
 parser.add_argument("--lr", type=float, default=5e-4)
 parser.add_argument("--seed", type=int, default=42)
 parser.add_argument("--max_seq_length", type=int, default=128)
 parser.add_argument("--warmup_ratio", type=float, default=0.06)
+parser.add_argument("--lora_target_weights", nargs="+", default=["query", "value"], help="Which attention weights to apply LoRA to (e.g. query value key dense)")
 args = parser.parse_args()
 
 # ---------- Model & Tokenizer ----------
 model = RobertaForSequenceClassification.from_pretrained(args.model, num_labels=3 if args.task == "mnli" else 2)
 tokenizer = RobertaTokenizer.from_pretrained(args.model)
-patch_model_with_lora(model, r=args.r, alpha=args.alpha)
+patch_model_with_lora(model, r=args.r, alpha=args.alpha, target_weights=args.lora_target_weights)
 
 # Freeze all but LoRA weights
 for name, param in model.named_parameters():
