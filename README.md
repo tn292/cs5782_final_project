@@ -9,14 +9,14 @@ We reproduced the results presented in **Table 2** of the paper, specifically fo
 We also reproduced the results presented in **Table 6** of the paper, specifically for the GLUE task MNLI, which highlights the effect of rank r on model perofmrnace, while adapting the weight type. 
 
 ## GitHub Contents
-'''
+`````
 ├── lora.py                # LoRA injection logic
 ├── transformer.py         # RoBERTa model integration with LoRA
 ├── train_lora.py          # Main training script
 ├── sweep.py               # 5 seed sweep launcher for getting comparable Table 2 results
 ├── requirements.txt       # Required dependencies
 └── results/               # Folders with output csv files with accuracies, f1, precision and recall scores
-'''
+`````
 ## Re-implementation Details
 We use Huggingface Transformers with PyTorch to re-implement LoRA on RoBERTa-base. Datasets (SST-2, MRPC, QQP) are loaded from the GLUE benchmark via datasets. Due to compute constraints, all tasks were trained for 3 epochs (vs. 60 in paper for SST-2) and with max sequence length = 128 (vs. 512 in the paper). LoRA injection was done through a custom patch_model_with_lora method.
 
