@@ -48,14 +48,14 @@ Differences can likely be attributed to shorter training duration and reduced in
 
 ![Table 1](https://github.com/tn292/cs5782_final_project/blob/main/results/table1.png?raw=true )
 
-![Table 2](https://github.com/tn292/cs5782_final_project/tree/main/results/table2.png)
+![Table 2](https://github.com/tn292/cs5782_final_project/blob/main/results/table2.png?raw=true)
 
 
 
 Replicating Table 6, due to evaluating on RoBERTa-base instead of GPT-3, our absolute accuracyes are lower but the trends in performance across ranks and weight types closely follow the paper's original findings. Due to time constraints, we ran each setting across only one random seed, instead of averaging over 5 random seeds, selected the best-performing epoch by validation accuracy, and reported the accuracy. Despite using a smaller model and fewer epochs we confirm the paper’s
 key insight: applying LoRA to multiple attention weights improves performance, and increasing the rank, up to a point, generally leads to better accuracy. Results below in table 3. 
 
-![Table 3](https://github.com/tn292/cs5782_final_project/tree/main/results/table3.png)
+![Table 3](https://github.com/tn292/cs5782_final_project/blob/main/results/table3.png?raw=true)
 
 ## Conclusion
 This re-implementation shows that LoRA can achieve strong performance with fewer parameters, but reproduction fidelity is affected by computational limits. Training time and sequence length significantly impact performance.
