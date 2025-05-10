@@ -46,16 +46,16 @@ Compared to the original:
 
 Differences can likely be attributed to shorter training duration and reduced input sequence lengths. Despite these modifications, our results in table 1 below demonstrate that LoRA can achieve competitive performance with limited training and shorter input lengths. This validates that LoRA is a highly parameter-efficient fine-tuning method capable of strong generalization even under constrained resources. We trained on same hyperparameters used in the paper, outlined in table 2 below.
 
-![alt text](https://github.com/tn292/cs5782_final_project/tree/main/results/table1.png "Logo Title Text 1")
+![Table 1](https://github.com/tn292/cs5782_final_project/blob/main/results/table1.png?raw=true )
 
-![alt text](https://github.com/tn292/cs5782_final_project/tree/main/results/table2.png "Logo Title Text 1")
+![Table 2](https://github.com/tn292/cs5782_final_project/tree/main/results/table2.png)
 
 
 
 Replicating Table 6, due to evaluating on RoBERTa-base instead of GPT-3, our absolute accuracyes are lower but the trends in performance across ranks and weight types closely follow the paper's original findings. Due to time constraints, we ran each setting across only one random seed, instead of averaging over 5 random seeds, selected the best-performing epoch by validation accuracy, and reported the accuracy. Despite using a smaller model and fewer epochs we confirm the paper’s
 key insight: applying LoRA to multiple attention weights improves performance, and increasing the rank, up to a point, generally leads to better accuracy. Results below in table 3. 
 
-![alt text](https://github.com/tn292/cs5782_final_project/tree/main/results/table3.png "Logo Title Text 1")
+![Table 3](https://github.com/tn292/cs5782_final_project/tree/main/results/table3.png)
 
 ## Conclusion
 This re-implementation shows that LoRA can achieve strong performance with fewer parameters, but reproduction fidelity is affected by computational limits. Training time and sequence length significantly impact performance.
