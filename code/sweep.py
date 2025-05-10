@@ -14,7 +14,7 @@ max_seq_length = 128
 seeds = [42, 43, 44, 45, 46]
 
 for seed in seeds:
-    output_dir = f"results/{task}_r{r}_a{alpha}_s{seed}"
+    output_dir = f"../results/{task}_r{r}_a{alpha}_s{seed}"
     cmd = [
         "python", "train_lora.py",
         "--task", task,
@@ -34,7 +34,7 @@ for seed in seeds:
 # === Compute median best accuracy ===
 accuracies = []
 for seed in seeds:
-    csv_path = f"results/{task}_r{r}_a{alpha}_s{seed}/training_results.csv"
+    csv_path = f"r../results/{task}_r{r}_a{alpha}_s{seed}/training_results.csv"
     if os.path.exists(csv_path):
         df = pd.read_csv(csv_path)
         best_acc = df["Accuracy"].max()

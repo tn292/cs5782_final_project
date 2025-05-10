@@ -34,7 +34,7 @@ We use Huggingface Transformers with PyTorch to re-implement LoRA on RoBERTa-bas
 
 3. **Run the training script** (for example for SST-2 using paper hyperparameters except with our changed max sequence length and number of epochs):
     ```bash
-    python train_lora.py --task sst2 --model roberta-base --r 8 --alpha 16 --max_seq_length 128 --batch_size 16 --lr 5e-4 --epochs 3 --seed 42
+    python train_lora.py --task mnli --r 8 --alpha 16 --lora_target_weights query value --output_dir ../results/mnli_r8_query_value
     ```
 
 **Note**: Requirements: Python 3.10+, PyTorch 2.x, Huggingface Transformers 4.30+, GPU recommended (16GB+ VRAM).
@@ -73,8 +73,8 @@ Some extensions and future directions include:
 ## References
 
 - Hu, E., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, L., & Chen, W. (2021). [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685). *arXiv preprint arXiv:2106.09685*.
-- PyTorch Documentation: https://pytorch.org/docs/
 - Huggingface Datasets and Transformers libraries
+- PyTorch Documentation: https://pytorch.org/docs/
 
 ## Acknowledgements
 This project was completed as part of the Cornell CS4782/5782: Deep Learning course. We thank the course staff for guidance and support throughout the re-implementation process.

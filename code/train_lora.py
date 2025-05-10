@@ -140,7 +140,7 @@ for entry in history:
 df = pd.DataFrame(rows)
 print("Per-epoch Validation Metrics:")
 print(df)
-df.to_csv(os.path.join(args.output_dir, "training_results.csv"), index=False)
+df.to_csv(os.path.join(args.output_dir, "../results/training_results.csv"), index=False)
 
 train_metrics = trainer.evaluate(encoded_dataset["train"])
 print("Training Metrics:", train_metrics)
