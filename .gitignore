@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.ipynb_checkpoints
+*.egg-info/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# MacOS
+.DS_Store
+
+# System files
+Thumbs.db
+
+# Logs and outputs
+*.log
+*.out
+*.tmp
+logs/
+
+# Huggingface and Transformers cache
+.cache/
+datasets/
+checkpoints/
+*.pt
+
+# Training results
+results/
+wandb/
+training_results.csv
+
+# Colab artifacts
+*.ckpt
+*.pkl
+
+# VSCode
+.vscode/
