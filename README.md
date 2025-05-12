@@ -10,10 +10,11 @@ We also reproduced the results presented in **Table 6** of the paper, specifical
 
 ## GitHub Contents
 `````
-├── lora.py                # LoRA injection logic
-├── transformer.py         # RoBERTa model integration with LoRA
-├── train_lora.py          # Main training script
-├── sweep.py               # 5 seed sweep launcher for getting comparable Table 2 results
+
+├── code/lora.py           # LoRA injection logic
+├── code/transformer.py    # RoBERTa model integration with LoRA
+├── code/train_lora.py     # Main training script
+├── code/sweep.py          # 5 seed sweep launcher for getting comparable Table 2 results
 ├── requirements.txt       # Required dependencies
 └── results/               # Folders with output csv files with accuracies, f1, precision and recall scores
 `````
