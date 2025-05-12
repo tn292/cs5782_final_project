@@ -35,6 +35,7 @@ We use Huggingface Transformers with PyTorch to re-implement LoRA on RoBERTa-bas
 
 3. **Run the training script** (for example for SST-2 using paper hyperparameters except with our changed max sequence length and number of epochs):
     ```bash
+    cd code
     python train_lora.py --task mnli --r 8 --alpha 16 --lora_target_weights query value --output_dir ../results/mnli_r8_query_value
     ```
 
